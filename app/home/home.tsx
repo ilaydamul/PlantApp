@@ -3,7 +3,7 @@ import { Colors } from '@/constants/colors';
 import { styles } from '@/constants/styles';
 import { useState } from 'react';
 import { View, Text, StyleSheet, ImageBackground, TextInput, ScrollView, Pressable, Image } from 'react-native';
-import { LinearGradient } from "react-native-linear-gradient";
+// import { LinearGradient } from "react-native-linear-gradient";
 
 export default function Home() {
   const [search, onChangeSearch] = useState('');
@@ -29,14 +29,14 @@ export default function Home() {
           </View>
 
           <View>
-          <LinearGradient
+          {/* <LinearGradient
             colors={['#E5C990', '#E4B046']} 
             start={{ x: 0, y: 0 }} 
             end={{ x: 1, y: 1 }}  
           >
             <Text style={styles.bold}>FREE Premium Available</Text>
           </LinearGradient>
-          
+           */}
 
             <Text>FREE Premium Available</Text>
             <Text>Tap to upgrade your account!</Text>
