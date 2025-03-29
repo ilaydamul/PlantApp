@@ -34,5 +34,23 @@ export const styles = StyleSheet.create({
     },
     fsLg: {
         fontSize: 32
+    },
+    brush: {
+        position: "absolute",
+        right: 15,
+        top: 80
+    },
+    brushTitle:{
+        fontSize: 32,
+        color: '#13231B',
+        marginBottom: 20,
+        fontWeight: "500",
+        marginTop:24
+    },
+    footer: {
+        position: "absolute",
+        bottom: 25,
+        left: 16,
+        right: 16
     }
 })
