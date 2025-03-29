@@ -1,9 +1,13 @@
+import FaqItem from '@/components/elements/FaqItem';
+import MailBox from '@/components/elements/MailBox';
 import IconInput from '@/components/ui/IconInput';
-import { Colors } from '@/constants/colors';
+import Colors from '@/constants/Colors';
 import { styles } from '@/constants/styles';
+import MaskedView from '@react-native-masked-view/masked-view';
+import { LinearGradient } from 'expo-linear-gradient';
 import { useState } from 'react';
 import { View, Text, StyleSheet, ImageBackground, TextInput, ScrollView, Pressable, Image } from 'react-native';
-// import { LinearGradient } from "react-native-linear-gradient";
+
 
 export default function Home() {
   const [search, onChangeSearch] = useState('');
@@ -18,34 +22,15 @@ export default function Home() {
       </ImageBackground>
 
       <View style={styles.container}>
-        <Pressable style={style.mailBg}>
-          <Image
-            source={require('../../assets/images/icons/mail-icon.png')}
-            style={{ width: 32, height: 25 }}
-            resizeMode="contain"
-          />
-          <View style={style.mailIconNotif}>
-            <Text style={style.mailIconNotifText}>1</Text>
-          </View>
+        <MailBox />
 
-          <View>
-          {/* <LinearGradient
-            colors={['#E5C990', '#E4B046']} 
-            start={{ x: 0, y: 0 }} 
-            end={{ x: 1, y: 1 }}  
-          >
-            <Text style={styles.bold}>FREE Premium Available</Text>
-          </LinearGradient>
-           */}
+        <Text style={[styles.bold, styles.fsSm, { marginTop: 20, marginBottom: 16 }]}>Get Started</Text>
 
-            <Text>FREE Premium Available</Text>
-            <Text>Tap to upgrade your account!</Text>
-          </View>
+        <FaqItem></FaqItem>
 
 
-
-        </Pressable>
       </View>
+
 
     </ScrollView>
 
@@ -53,29 +38,3 @@ export default function Home() {
   );
 }
 
-const style = StyleSheet.create({
-  mailBg: {
-    position: "relative",
-    backgroundColor: Colors.brown,
-    padding: 20,
-    borderRadius: 18
-  },
-  mailIconNotif: {
-    position: "absolute",
-    left: 40,
-    top: 10,
-    width: 18,
-    height: 18,
-    backgroundColor: Colors.red,
-    alignItems: "center",
-    justifyContent: "center",
-    textAlign: "center",
-    borderRadius: "50%"
-  },
-  mailIconNotifText: {
-    color: Colors.white,
-  },
-  text:{
-
-  }
-})
