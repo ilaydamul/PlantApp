@@ -37,7 +37,7 @@ export default function Onboard() {
           <Text style={styles.brushTitle}>
             Get plant <Text style={styles.bold}>care guides</Text>
           </Text>
-          <Image source={require("../assets/images/brush.png")} style={[styles.brush, { right: 35 }]} />
+          <Image source={require("../assets/images/brush.png")} style={[styles.brush, { right: 40 }]} />
         </>
       ),
     },

@@ -41,7 +41,8 @@ export const styles = StyleSheet.create({
     brush: {
         position: "absolute",
         right: 15,
-        top: 80
+        top: Platform.OS === 'android' ? StatusBar.currentHeight + 60 : 105,
+
     },
     brushTitle: {
         fontSize: 32,
