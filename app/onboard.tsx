@@ -15,6 +15,7 @@ export default function Onboard() {
 
   const flatListRef = useRef(null);
 
+  //Onboard Slide Datas
   const slides = [
     {
       bg: require('../assets/images/onboardBg1.png'),
@@ -45,13 +46,8 @@ export default function Onboard() {
     },
   ];
 
-  const handleScroll = (event) => {
-    const index = Math.round(
-      event.nativeEvent.contentOffset.x / event.nativeEvent.layoutMeasurement.width
-    );
-    setCurrentIndex(index);
-  };
 
+  //Go to next slide when click on continue button
   const goToNextSlide = () => {
     const nextIndex = currentIndex + 1;
     if (currentIndex < slides.length - 2) {
@@ -64,6 +60,7 @@ export default function Onboard() {
         useNativeDriver: true,
       }).start();
     }
+
     flatListRef.current.scrollToIndex({ index: nextIndex, animated: true });
   };
 
@@ -76,13 +73,13 @@ export default function Onboard() {
         horizontal
         showsHorizontalScrollIndicator={false}
         pagingEnabled
+        scrollEnabled={false}
         bounces={false}
         keyExtractor={(item, index) => index.toString()}
         onScroll={Animated.event(
           [{ nativeEvent: { contentOffset: { x: scrollX } } }],
           { useNativeDriver: false }
         )}
-        onMomentumScrollEnd={handleScroll}
       />
 
       <View style={styles.footer}>
@@ -103,6 +100,7 @@ export default function Onboard() {
         ))}
       </View>
 
+      {/* Modal shows when slides end */}
       {isModalVisible && (
         <Animated.View style={[style.modal, { transform: [{ translateY: slideAnim }] }]}>
           <Paywall />
@@ -148,6 +146,5 @@ const style = StyleSheet.create({
     borderTopRightRadius: 20,
     overflow: "hidden",
     elevation: 5,
-    // padding: 20,
   },
 });

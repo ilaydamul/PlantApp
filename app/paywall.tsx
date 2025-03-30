@@ -8,6 +8,8 @@ import AdvantageItem from '@/components/elements/AdvantageItem'
 import RadioButton from '@/components/elements/RadioButton'
 import { Link, useNavigation } from 'expo-router'
 
+
+//Paywall modal for onboard screen
 export default function Paywall() {
     const navigation = useNavigation();
     const [selectedOption, setSelectedOption] = useState("1 Month");
@@ -35,10 +37,14 @@ export default function Paywall() {
         },
     ]
 
+    //Go to home screen when close button is pressed
+    //Cant go to prev screen because of replace
     const goHomeHandler = () => {
         navigation.replace("home");
     }
 
+    //Go to home? screen when try free button is pressed
+    //Cant go to prev screen because of replace
     const tryFreePressHandler = () => {
         navigation.replace("home");
     }

@@ -1,7 +1,5 @@
-import { View, Text, ImageBackground, Image, StyleSheet, useWindowDimensions } from 'react-native'
-import Button from '../ui/Button'
+import { ImageBackground, Image, StyleSheet, useWindowDimensions } from 'react-native'
 import { styles } from '@/constants/styles';
-import Colors from '@/constants/Colors';
 
 interface OnboardItemProps {
     item: {
@@ -9,7 +7,6 @@ interface OnboardItemProps {
         image: any;
         title: string;
     };
-    // handleNext: () => void;
 }
 
 export default function OnboardItem({ item }: OnboardItemProps) {
@@ -32,5 +29,5 @@ const style = StyleSheet.create({
         height: "80%",
         marginBottom: 20,
     },
- 
+
 });

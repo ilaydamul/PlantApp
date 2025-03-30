@@ -37,9 +37,7 @@ export default function RadioButton({ options, selected, onSelect }: RadioButton
 
 const style = StyleSheet.create({
     radioContainer: {
-        // flexDirection: "row", 
         gap: 15,
-
     },
     radioItem: {
         flexDirection: "row",
@@ -79,7 +77,6 @@ const style = StyleSheet.create({
         backgroundColor: "#28AF6E",
         paddingVertical: 6,
         paddingHorizontal: 10,
-        // borderRadius: 8
         borderBottomLeftRadius: 12,
         borderTopRightRadius: 10,
     }

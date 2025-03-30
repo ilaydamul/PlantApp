@@ -6,7 +6,7 @@ import { Platform, StatusBar, Text, TextInput } from "react-native";
 import { Provider } from "react-redux";
 import { store } from "../redux/store";
 
-//NAVIGATOR
+//NAVIGATION
 export default function RootLayout() {
   return (
     <>

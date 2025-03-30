@@ -3,7 +3,7 @@ import { View, Text, StyleSheet } from 'react-native';
 export default function MyGarden() {
   return (
     <View style={styles.container}>
-      <Text>MyGarden</Text>
+      <Text>My Garden</Text>
     </View>
   );
 }
