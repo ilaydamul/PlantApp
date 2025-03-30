@@ -9,6 +9,9 @@ export const styles = StyleSheet.create({
         fontSize: 16,
         marginTop: 4
     },
+    colorWhite: {
+        color: "#FFF",
+    },
     bold: {
         fontWeight: "bold"
     },
@@ -40,12 +43,12 @@ export const styles = StyleSheet.create({
         right: 15,
         top: 80
     },
-    brushTitle:{
+    brushTitle: {
         fontSize: 32,
         color: '#13231B',
         marginBottom: 20,
         fontWeight: "500",
-        marginTop:24
+        marginTop: 24
     },
     footer: {
         position: "absolute",

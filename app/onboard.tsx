@@ -1,19 +1,19 @@
 import React, { useState, useRef } from 'react';
-import { FlatList, Image, Text, View, StyleSheet, Dimensions, Animated, TouchableOpacity } from 'react-native';
+import { FlatList, Image, Text, View, StyleSheet, Dimensions, Animated } from 'react-native';
 import OnboardItem from '@/components/elements/OnboardItem';
 import { styles } from '@/constants/styles';
 import Button from '@/components/ui/Button';
 import Paywall from './paywall';
 
-const { width, height } = Dimensions.get('window'); // Ekran genişliğini ve yüksekliğini alın
+const { width, height } = Dimensions.get('window');
 
 export default function Onboard() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const scrollX = new Animated.Value(0);
-  const slideAnim = useRef(new Animated.Value(height)).current; // Animasyon için yeni bir değer tanımla
+  const slideAnim = useRef(new Animated.Value(height)).current;
 
-  const flatListRef = useRef(null);  // FlatList referansı
+  const flatListRef = useRef(null);
 
   const slides = [
     {
@@ -60,18 +60,11 @@ export default function Onboard() {
 
       setIsModalVisible(true);
       Animated.spring(slideAnim, {
-        toValue: 0, // Sayfayı yukarı kaydır
+        toValue: 0,
         useNativeDriver: true,
       }).start();
     }
     flatListRef.current.scrollToIndex({ index: nextIndex, animated: true });
-  };
-
-  const closeModal = () => {
-    Animated.spring(slideAnim, {
-      toValue: height, // Sayfayı tekrar aşağı kaydır
-      useNativeDriver: true,
-    }).start(() => setIsModalVisible(false));
   };
 
   return (
@@ -110,7 +103,6 @@ export default function Onboard() {
         ))}
       </View>
 
-      {/* Yeni Modal (Sayfa) */}
       {isModalVisible && (
         <Animated.View style={[style.modal, { transform: [{ translateY: slideAnim }] }]}>
           <Paywall />

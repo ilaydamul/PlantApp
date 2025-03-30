@@ -7,7 +7,7 @@ export default function Root() {
   const navigation = useNavigation();
 
   function onPressHandler() {
-    navigation.navigate("onboard");
+    navigation.replace("onboard");
   }
 
   return (
@@ -26,7 +26,7 @@ export default function Root() {
           width: '100%',
         }}
       />
-      <View style={[ styles.footer]}>
+      <View style={[styles.footer]}>
         <Button onPress={onPressHandler}>Get Started</Button>
         <Text style={[styles.footerText, { marginTop: 12 }]}>
           By tapping next, you are agreeing to PlantID {'\n'}
